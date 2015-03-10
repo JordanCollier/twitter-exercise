@@ -1,0 +1,20 @@
+<%= form_tag "/tweet_fetcher" %>
+<%= label_tag "Twitter Handle"%>
+<%= text_field_tag :twitter_handle %>
+<%= submit_tag %>
+
+
+<table>
+ <thead>
+   <tr>
+     <th>Tweets</th>
+   </tr>
+ </thead>
+ <tbody>
+   <% @tweet_fetcher.user_tweets.each do |tweet| %>
+   <tr>
+     <td><%= tweet.text %></td>
+   </tr>
+   <% end %>
+ </tbody>
+</table>
